@@ -42,14 +42,14 @@ inputSubmit.setAttribute('id', 'zipCodeButtonSubmit')
 
 let firstButton = document.getElementById('zipCodeButtonSubmit')
 
-// async function apiInfo(url) {
-//     try {
-//       const response = await axios.get(url);
-//       console.log(response);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   }
+async function apiInfo(url) {
+    try {
+      const response = await axios.get(url);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
 
 
@@ -153,3 +153,220 @@ firstButton.addEventListener('click', () => {
   zipWeather(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&appid=${key}`)
 
 })
+
+// let cityDiv = document.createElement('div')
+// popCreate.appendChild(cityDiv)
+// cityDiv.setAttribute('id', 'cityContainer')
+// let cityTitle = document.createElement('div')
+// cityDiv.appendChild(cityTitle)
+// cityTitle.setAttribute('id', 'cityTitleHead')
+// cityTitle.innerText = 'City'
+// let cityInfo = document.createElement('div')
+// cityDiv.appendChild(cityInfo)
+// cityInfo.setAttribute('id', 'cityName')
+
+
+// function test (testWord, testWord2) {
+//   console.log(`The blind ${testWord} is going to ${testWord2}`)
+// }
+// test ('dog', 'jump')
+
+// function testElem (element, parent, id) {
+//   let newDiv = document.createElement(element)
+//   newDiv.setAttribute('id', id)
+//   parent.appendChild(newDiv)
+// }
+// testElem('div', mainDiv, 'test')
+
+// function template (inside) {
+// let insidePlace = `${inside}how`
+// console.log(insidePlace)
+// }
+// template('hi')
+
+
+// // function create2Row (element, parent, id, name){
+// //   let nameHolder = `${name}Container`
+// //   console.log(nameHolder)
+// //   let idHolder = `${id}tag`
+// //   console.log(idHolder)
+// //   console.log(element)
+// //   console.log(parent)
+// // }
+// // create2Row('div', mainDiv, 'city', 'city')
+
+// function trying (name, element, parent, area){ 
+//   let id = `${name}id`
+//   name = document.createElement(`${element}`)
+//   parent.appendChild(name)
+//   name.setAttribute('id', id)
+//   name.setAttribute('class', 'container')
+
+
+//   let innerParent = document.getElementById(id)
+
+
+//   let innerTemp = document.createElement(element)
+//   let tempId = `temp${area}`
+//   // innerParent.appendChild(innerTemp)
+//   innerTemp.setAttribute('id', tempId)
+//   innerTemp.setAttribute('class', 'row')
+
+
+  
+//   // console.log(innerParent)
+//   let innerTitle = document.createElement(element)
+//   let titleId = `title${area}`
+//   innerParent.appendChild(innerTitle)
+//   innerTitle.setAttribute('id', titleId)
+//   innerTitle.setAttribute('class', 'row')
+
+
+//   let innerInfo = document.createElement(element)
+//   let infoId = `info${area}`
+//   innerParent.appendChild(innerInfo)
+//   innerInfo.setAttribute('id', infoId)
+//   innerInfo.setAttribute('class', 'row')
+
+
+// }
+// trying('cityContainer', 'div', mainDiv, 'city')
+// trying('tempContainer', 'div', mainDiv, 'temp')
+// trying('conditionContainer', 'div', mainDiv, 'condition')
+// trying('imageContainer', 'div', mainDiv, 'img')
+
+function pop() {
+  let popCreate = document.createElement('div')
+  mainDiv.appendChild(popCreate)
+  popCreate.setAttribute('id', 'popArea')
+  popCreate.setAttribute('class', 'container')
+  popCreate.innerText = 'new pop'
+  }
+  pop()
+
+  let poppy = document.getElementById('popArea')
+  // adding the city section
+
+let state = {
+  area:
+  {cityContainer:'cityContainer',
+  cityTitle:'cityTitle',
+  cityInfo: 'cityInfo',
+
+  tempContainer: 'tempContainer',
+  tempTitle: 'tempTitle',
+  tempInfo: 'tempInfo',
+
+  conditionContainer: 'condiContainer',
+  conditionTitle: 'condiTitle',
+  conditionInfor: 'condiInfo',
+
+  otherContainer:'otherContainer',
+  otherTitle:'otherTitle',
+  otherInfo:'otherInfo',},
+
+
+
+  element: {
+  cityContainer:'div',
+  cityTitle:'p',
+  cityInfo: 'p',
+
+  tempContainer: 'div',
+  tempTitle: 'p',
+  tempInfo: 'p',
+
+  conditionContainer: 'div',
+  conditionTitle: 'p',
+  conditionInfor: 'p',
+
+  otherContainer:'div',
+  otherTitle:'p',
+  otherInfo:'p',
+  },
+
+
+
+  text: {
+  cityContainer:'',
+  cityTitle:'City',
+  cityInfo: 'place',
+
+  tempContainer: '',
+  tempTitle: 'Temperature',
+  tempInfo: 'place',
+
+  conditionContainer: '',
+  conditionTitle: 'Conditions',
+  conditionInfor: 'meh',
+
+  otherContainer:'',
+  otherTitle:'Other Info',
+  otherInfo:'boo',
+  },
+
+  
+  
+  clas: {
+    cityContainer:'container',
+    cityTitle:'col',
+    cityInfo: 'col',
+    
+    tempContainer: 'container',
+    tempTitle: 'col',
+    tempInfo: 'col',
+    
+  conditionContainer: 'container',
+  conditionTitle: 'col',
+  conditionInfor: 'col',
+  
+  otherContainer:'container',
+  otherTitle:'col',
+  otherInfo:'col',
+  }
+}
+
+
+
+function createElement (area, element, text, clas) {
+  let id = `${area}id` 
+  let createElement = document.createElement(element)
+  poppy.appendChild(createElement)
+  createElement.setAttribute('id',id)
+  createElement.setAttribute('class', clas)
+  createElement.innerText = `${text}`
+}
+createElement('city', 'div', 'Location', 'col')
+createElement('temp', 'div', 'temperature', 'col')
+
+// let area1 = state.text
+// console.log(area1)
+// console.log(Object.values(state.text))
+
+
+let areaTest = Object.values(state.area)
+let elementTest = Object.values(state.element)
+let textTest = Object.values(state.text)
+let clasTest = Object.values(state.clas)
+// console.log(areaTest)
+
+
+let a = areaTest.forEach(lol => {
+  console.log(`${lol}`)
+});
+let e =elementTest.forEach(lol => {
+  console.log(`${lol}`)
+});
+let t =textTest.forEach(lol => {
+  console.log(`${lol}`)
+});
+let c =clasTest.forEach(lol => {
+  console.log(`${lol}`)
+});
+createElement('a', 'div', 't', 'c')
+
+// need to use object.values() to convert object values to an array so I can then for loop it
+  // I also need to make an if else statement to only use poppy at clas = container
+  // if else clas is = col use a new parent append need to figure out how to set this.
+  // if else clas is row to use a different new parent to set to
+  
