@@ -36,3 +36,30 @@
 - button, created dynamically, will trigger the request to the api to get the weather information for the desired valid zip code
     -  Will also be dynamic and change to reset button after displaying the weather information
     -  Once reset, will allow to search for another different zipcode
+  ## Functions
+  
+  * init() - This function will run on load, using JavaScript to generate a div for the header section
+    * Creates an h1 section for the name of the app
+    * creates a method to input the data to the program with a label and input button
+        * The input will have parameters set to only allow numbers and not above 99999, this is a definsive code to try and prevent wrong zip codes
+        * If stretch goal for other countries(Great Britain), is met, the parameters will be changed due to letters and length change
+    * The function also places attributes for ids and classes to help identify the created elements 
+* pop()  - This function will make a new div container to contain the weather apps four sections and set attributes for the class and id to help identify the div
+* createElement(area, element, text, clas, parent) - This function is used to generate more elements, with specified parameters to help specilize each new element
+    * area - This indicates where the element will be put in the dom, it also will influence the id created for the element
+    * element - this will decide what the element created is.
+    *     * text - Will put text into the element if specified leave a blank string to not add content
+    * clas - stands for class, can't use class due to it being declared already. This will be used to add the bootstrap classes to help with the design of the app
+    * parent - This parameter will dictate where the new element will be appended under.
+* btnClick() - This is a function with a bad name, This will run createElement for each element created after init and pop. With future additions the hope is to run a for loop with objects to help allieviate the amount of code written.
+* reset() - Reset will remove each of the four sections created by using .remove() and removing the parent element and the children with it. This will also confirm the button is reset just in case of a invalid zip is added
+* firstButton() This function will trigger on the click of the button, has four main actions
+    * Runs the asynchronous try()
+        * try() Sends the inputed zipcode to the api to get the desired information. Will return in json and convert this to readable object. The data needed will then be set as the appropiate innerText or further converted to find celcius and fahrenheit. If an invalid zipcode is entered it will catch this and return an alert to inform the user.
+    * Runs pop()
+    * Runs btnClicked() 
+    * firstButton will run an if else statement to help configure the button between the submit and reset version.
+
+## PROCEDURE
+
+
