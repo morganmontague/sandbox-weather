@@ -55,72 +55,118 @@ async function apiInfo(url) {
 
 //creating the pop up
 
-let popCreate = document.createElement('div')
-mainDiv.appendChild(popCreate)
-popCreate.setAttribute('id', 'popArea')
-popCreate.innerText = 'new pop'
+// let popCreate = document.createElement('div')
+// mainDiv.appendChild(popCreate)
+// popCreate.setAttribute('id', 'popArea')
+// popCreate.innerText = 'new pop'
 
-// adding the city section
-let cityDiv = document.createElement('div')
-popCreate.appendChild(cityDiv)
-cityDiv.setAttribute('id', 'cityContainer')
-let cityTitle = document.createElement('div')
-cityDiv.appendChild(cityTitle)
-cityTitle.setAttribute('id', 'cityTitleHead')
-cityTitle.innerText = 'City'
-let cityInfo = document.createElement('div')
-cityDiv.appendChild(cityInfo)
-cityInfo.setAttribute('id', 'cityName')
+// // adding the city section
+// let cityDiv = document.createElement('div')
+// popCreate.appendChild(cityDiv)
+// cityDiv.setAttribute('id', 'cityContainer')
+// let cityTitle = document.createElement('div')
+// cityDiv.appendChild(cityTitle)
+// cityTitle.setAttribute('id', 'cityTitleHead')
+// cityTitle.innerText = 'City'
+// let cityInfo = document.createElement('div')
+// cityDiv.appendChild(cityInfo)
+// cityInfo.setAttribute('id', 'cityName')
 
-// adding temp
-let tempDiv = document.createElement('div')
-popCreate.appendChild(tempDiv)
-tempDiv.setAttribute('id', 'tempContainer')
-let tempTitle =document.createElement('div')
-tempDiv.appendChild(tempTitle)
-tempTitle.setAttribute('id', 'tempRow1')
-tempTitle.innerText = 'Temperature'
-let tempRow2 = document.createElement('div')
-tempDiv.appendChild(tempRow2)
-tempRow2.setAttribute('id', 'columnHolder')
-let kelvinTemp = document.createElement('div')
-tempRow2.appendChild(kelvinTemp)
-kelvinTemp.setAttribute('id', 'kelvin')
-let celsiusTemp = document.createElement('div')
-tempRow2.appendChild(celsiusTemp)
-celsiusTemp.setAttribute('id', 'celsius')
-celsiusTemp.innerText = 'This will be celsius'
-let fahrenTemp = document.createElement('div')
-tempRow2.appendChild(fahrenTemp)
-fahrenTemp.setAttribute('id', 'fahren')
-fahrenTemp.innerText = 'This will be fahrenheit'
+// // adding temp
+// let tempDiv = document.createElement('div')
+// popCreate.appendChild(tempDiv)
+// tempDiv.setAttribute('id', 'tempContainer')
+// let tempTitle =document.createElement('div')
+// tempDiv.appendChild(tempTitle)
+// tempTitle.setAttribute('id', 'tempRow1')
+// tempTitle.innerText = 'Temperature'
+// let tempRow2 = document.createElement('div')
+// tempDiv.appendChild(tempRow2)
+// tempRow2.setAttribute('id', 'columnHolder')
+// let kelvinTemp = document.createElement('div')
+// tempRow2.appendChild(kelvinTemp)
+// kelvinTemp.setAttribute('id', 'kelvin')
+// let celsiusTemp = document.createElement('div')
+// tempRow2.appendChild(celsiusTemp)
+// celsiusTemp.setAttribute('id', 'celsius')
+// celsiusTemp.innerText = 'This will be celsius'
+// let fahrenTemp = document.createElement('div')
+// tempRow2.appendChild(fahrenTemp)
+// fahrenTemp.setAttribute('id', 'fahren')
+// fahrenTemp.innerText = 'This will be fahrenheit'
 
 
 
-// adding condition
-let conditionDiv = document.createElement('div')
-popCreate.appendChild(conditionDiv)
-conditionDiv.setAttribute('id', 'conditionContainer')
-let conditionTitle = document.createElement('div')
-conditionDiv.appendChild(conditionTitle)
-conditionTitle.setAttribute('id', 'conditionTitleHead')
-conditionTitle.innerText = 'Condition'
-let conditionInfo = document.createElement('div')
-conditionDiv.appendChild(conditionInfo)
-conditionInfo.setAttribute('id', 'conditionalText')
+// // adding condition
+// let conditionDiv = document.createElement('div')
+// popCreate.appendChild(conditionDiv)
+// conditionDiv.setAttribute('id', 'conditionContainer')
+// let conditionTitle = document.createElement('div')
+// conditionDiv.appendChild(conditionTitle)
+// conditionTitle.setAttribute('id', 'conditionTitleHead')
+// conditionTitle.innerText = 'Condition'
+// let conditionInfo = document.createElement('div')
+// conditionDiv.appendChild(conditionInfo)
+// conditionInfo.setAttribute('id', 'conditionalText')
 
-// creating image area
-let imageDiv = document.createElement('div')
-popCreate.appendChild(imageDiv)
-imageDiv.setAttribute('id', 'imgContainer')
-let imgTitle = document.createElement('div')
-imageDiv.appendChild(imgTitle)
-imgTitle.setAttribute('id', 'otherTitle')
-imgTitle.innerText = 'Other Information'
-let imgInfo = document.createElement('div')
-imageDiv.appendChild(imgInfo)
-imgInfo.setAttribute('id', 'imgPlace')
-imgInfo.innerText='This will be an image or other info' // need to figure out this part
+// // creating image area
+// let imageDiv = document.createElement('div')
+// popCreate.appendChild(imageDiv)
+// imageDiv.setAttribute('id', 'imgContainer')
+// let imgTitle = document.createElement('div')
+// imageDiv.appendChild(imgTitle)
+// imgTitle.setAttribute('id', 'otherTitle')
+// imgTitle.innerText = 'Other Information'
+// let imgInfo = document.createElement('div')
+// imageDiv.appendChild(imgInfo)
+// imgInfo.setAttribute('id', 'imgPlace')
+// imgInfo.innerText='This will be an image or other info' // need to figure out this part
+
+function pop() {
+  let popCreate = document.createElement('div')
+  mainDiv.appendChild(popCreate)
+  popCreate.setAttribute('id', 'popArea')
+  popCreate.setAttribute('class', 'container')
+  popCreate.innerText = 'new pop'
+  }
+  pop()
+
+  let poppy = document.getElementById('popArea')
+
+
+function createElement (area, element, text, clas, parent) {
+  let id = `${area}id` 
+  let createElement = document.createElement(element)
+  parent.appendChild(createElement)
+  createElement.setAttribute('id',id)
+  createElement.setAttribute('class', clas)
+  createElement.innerText = `${text}`
+}
+createElement('city', 'div', 'LocationContainer', 'container bg-primary', poppy)
+let cityParent = document.getElementById('cityid')
+createElement('cityTitle', 'p', 'Location', 'row bg-sucess', cityParent)
+createElement('cityInfo', 'p', 'Will be city', 'row bg-primary', cityParent)
+
+createElement('temp', 'div', 'temperatureContainer', 'container bg-warning', poppy)
+let tempParent = document.getElementById('tempid')
+createElement('tempTitle', 'p', 'Temperature', 'row bg-sucess', tempParent)
+createElement('tempInfo', 'p', 'Temperature', 'row bg-warning', tempParent)
+let degreeParent = document.getElementById('tempInfoid')
+createElement('kelvin', 'p', 'Kelvin', 'col bg-sucess', degreeParent)
+createElement('celcius', 'p', 'celcius', 'col bg-warning', degreeParent)
+createElement('fahren', 'p', 'Fahrenheit', 'col bg-sucess', degreeParent)
+
+createElement('condition', 'div', 'conditionContainer', 'container bg-primary', poppy)
+let conditionParent = document.getElementById('conditionid')
+createElement('conditionTitle', 'p', 'Condition', 'row bg-sucess', conditionParent)
+createElement('conditionInfo', 'p', 'Condition', 'row bg-primary', conditionParent)
+
+
+createElement('other', 'div', 'otherContainer', 'container bg-warning', poppy)
+let otherParent = document.getElementById('otherid')
+createElement('otherTitle', 'p', 'Other Info', 'row bg-sucess', otherParent)
+createElement('otherInfo', 'p', 'Image here', 'row bg-sucess', otherParent)
+
 
 
 let country = 'us'
@@ -137,12 +183,12 @@ firstButton.addEventListener('click', () => {
       k = Math.round(k)
       let c = Math.round(k - 273.15)
       let f = Math.round(c*(9/5) + 32)
-      conditionInfo.innerText = response.data.weather[0].description
-      kelvinTemp.innerText = k + ' K'
-      celsiusTemp.innerText = c + ' C'
-      fahrenTemp.innerText = f + ' F'
-      cityDiv.innerText = response.data.name
-      imgInfo.innerText = response.data.weather[0].icon
+      conditionInfoid.innerText = response.data.weather[0].description
+      kelvinid.innerText = k + ' K'
+      celciusid.innerText = c + ' C'
+      fahrenid.innerText = f + ' F'
+      cityInfoid.innerText = response.data.name
+      otherInfoid.innerText = response.data.weather[0].icon
       
     } catch (error) {
       console.error(error);
@@ -235,16 +281,7 @@ firstButton.addEventListener('click', () => {
 // trying('conditionContainer', 'div', mainDiv, 'condition')
 // trying('imageContainer', 'div', mainDiv, 'img')
 
-function pop() {
-  let popCreate = document.createElement('div')
-  mainDiv.appendChild(popCreate)
-  popCreate.setAttribute('id', 'popArea')
-  popCreate.setAttribute('class', 'container')
-  popCreate.innerText = 'new pop'
-  }
-  pop()
 
-  let poppy = document.getElementById('popArea')
   // adding the city section
 
 let state = {
@@ -328,45 +365,5 @@ let state = {
 
 
 
-function createElement (area, element, text, clas) {
-  let id = `${area}id` 
-  let createElement = document.createElement(element)
-  poppy.appendChild(createElement)
-  createElement.setAttribute('id',id)
-  createElement.setAttribute('class', clas)
-  createElement.innerText = `${text}`
-}
-createElement('city', 'div', 'Location', 'col')
-createElement('temp', 'div', 'temperature', 'col')
-
-// let area1 = state.text
-// console.log(area1)
-// console.log(Object.values(state.text))
 
 
-let areaTest = Object.values(state.area)
-let elementTest = Object.values(state.element)
-let textTest = Object.values(state.text)
-let clasTest = Object.values(state.clas)
-// console.log(areaTest)
-
-
-let a = areaTest.forEach(lol => {
-  console.log(`${lol}`)
-});
-let e =elementTest.forEach(lol => {
-  console.log(`${lol}`)
-});
-let t =textTest.forEach(lol => {
-  console.log(`${lol}`)
-});
-let c =clasTest.forEach(lol => {
-  console.log(`${lol}`)
-});
-createElement('a', 'div', 't', 'c')
-
-// need to use object.values() to convert object values to an array so I can then for loop it
-  // I also need to make an if else statement to only use poppy at clas = container
-  // if else clas is = col use a new parent append need to figure out how to set this.
-  // if else clas is row to use a different new parent to set to
-  

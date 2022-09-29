@@ -30,3 +30,43 @@ cityTitle.innerText = 'City'
 let cityInfo = document.createElement('div')
 cityDiv.appendChild(cityInfo)
 cityInfo.setAttribute('id', 'cityName')
+
+
+
+// let area1 = state.text
+// console.log(area1)
+// console.log(Object.values(state.text))
+
+
+
+// console.log(areaTest)
+function tryWhile () {
+    let areaTest = Object.values(state.area)
+    let elementTest = Object.values(state.element)
+    let textTest = Object.values(state.text)
+    let clasTest = Object.values(state.clas)
+  
+  // console.log(areaTest)
+  
+  
+  tryWhile()
+  
+  // let a = areaTest.forEach(lol => {
+  //   console.log(`${lol}`)
+  // });
+  // let e =elementTest.forEach(lol => {
+  //   console.log(`${lol}`)
+  // });
+  // let t =textTest.forEach(lol => {
+  //   console.log(`${lol}`)
+  // });
+  // let c =clasTest.forEach(lol => {
+  //   console.log(`${lol}`)
+  // });
+  // createElement('a', 'div', 't', 'c')
+  
+  // need to use object.values() to convert object values to an array so I can then for loop it
+    // I also need to make an if else statement to only use poppy at clas = container
+    // if else clas is = col use a new parent append need to figure out how to set this.
+    // if else clas is row to use a different new parent to set to
+    
