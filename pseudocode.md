@@ -62,4 +62,66 @@
 
 ## PROCEDURE
 
+The weather app will be able to take user input for a zip code, using the zip code it will retreive data from an api on weather data, and return, interperate and visualize the data.
 
+The page will load init(), which creates an h1, label, input, and a button. It will do this dynamically but still hardcoded, the label, input and button needed more attributes then most elements in this web page weather app. The input will be specified for zip codes, however not every five number combination is a valid zip code, so we will have to prepare for that.
+
+The user will insert a zip code and click the submit button and it will activate a click event with multiple functions attached.
+
+The try() function uses axios to get the data from the weather api. It will use a catch feature (sorta like an if else) that will return an error if not a valid zip code is entered.
+```
+firstButton click triggers ClickEventListener
+    Onclick check submitted data
+        If catch data from the zipcode is not valid
+            Return Error to user in form of Alert
+        Else 
+            Retrieve data json and prepare to interpret and make readable to user
+```
+---
+
+### The api url explained
+
+Below is an axample url sent to the api, it has three areas of note.
+- Api Key
+- Zip Code Section
+- Country
+
+The country isn't as important unless stretch goal for more countries is added. *
+```
+Example
+let key = 61243455494583beaa9d02e13c7f29e3
+let country = us
+let zip = user input zip code
+using templete literals the url is updated for each search
+zipWeather(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&appid=${key}`)
+```
+
+---
+The API will return a lot of data, the try function will retrieve the required data.
+City, Temperature in Kelvin, condition and icon code.
+
+The city and condition can be used as is. The Kelvin will be used to report on kelvin and to get the celcius and fahrenheit.
+```
+        K = kelvin, c = celcius and f = fahrenheit
+        let c = Math.round(k - 273.15)
+        let f = Math.round(c*(9/5) + 32)
+```
+The icon code is put into a source for an image using templete literals
+```
+example icon = n02
+let src = `https://openweathermap.org/img/wn/${icon}@2x.png`
+```
+---
+While the try function is retrieving the weather data, other activities are triggered along side.
+
+
+The click will trigger pop() and btnClick(), both are creating new elements using the function createElement(). This section is more hardcoded than wanted. As explained above five parameters are needed. Each function will create the specified element and append it at the specified parent creating 4 sections new sections to display the data collected by try().
+
+The button click will trigger a change in the button itself changing colors and changing the text to reset. Using an if else statement is the reason for this change. If the button is clicked and the inner text is Submit, the color will change by adding a class and the inner text is changed to Reset.
+
+The reset() is also set to the if else statement. If the button is clicked while the buttons inner text is equal to reset the button changes colors again with a class, back to the original color and the text is set to submit. The reset function will remove the parent elements of each section that was created by btnClick. This will also remove the child elements as well, setting the page back to the starting phase.
+
+### Concerns
+Not sure how to use for loops with parameters.
+Bootstrap is still weird
+No stretch goals were met..
