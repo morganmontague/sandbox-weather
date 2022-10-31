@@ -87,38 +87,38 @@ let poppy = document.getElementById('popArea')
 
 // This is an attempt to try and ease up my hard code, didn't get it perfect, wish I could have run my parameters through it
 // really liked the templete literals and parameters making it easy to "use"
-function createElement (area, element, text, clas, parent) {
-  let id = `${area}id` 
+function createElement (area, element, text, clas, parent, meh) {
+  let ids = `${area}id` 
   let createElement = document.createElement(element)
   parent.appendChild(createElement)
-  createElement.setAttribute('id',id)
+  createElement.setAttribute('id',ids, meh)
   createElement.setAttribute('class', clas)
   createElement.innerText = `${text}`
 }
 
 // This is sorta hard coded, couldn't figure out the looping with multiple parameters
 function btnClick () {
-  createElement('city', 'div', '', 'container rounded h4 bg-primary justify-content-center', poppy)
+  createElement('city', 'div', '', 'container rounded h4  justify-content-center', poppy, 'box-color')
   let cityParent = document.getElementById('cityid')
-  createElement('cityTitle', 'p', 'Location', 'bg-sucess text-center justify-content-center ', cityParent)
-  createElement('cityInfo', 'p', '', 'bg-primary text-center justify-content-center', cityParent)
+  createElement('cityTitle', 'p', 'Location', 'bg-sucess text-center justify-content-center ', cityParent, 'box-color')
+  createElement('cityInfo', 'p', '', ' text-center justify-content-center', cityParent, 'box-color')
   
-  createElement('temp', 'div', '', 'container rounded bg-warning justify-content-center', poppy)
+  createElement('temp', 'div', '', 'container rounded justify-content-center', poppy, 'box-color')
   let tempParent = document.getElementById('tempid')
-  createElement('tempTitle', 'p', 'Temperature', ' row h4 bg-sucess text-center justify-content-center', tempParent)
-  createElement('tempInfo', 'div', '', ' container row bg-warning h4 justify-content-center', tempParent)
+  createElement('tempTitle', 'p', 'Temperature', ' row h4 bg-sucess text-center justify-content-center', tempParent, 'box-color')
+  createElement('tempInfo', 'div', '', ' container row h4 justify-content-center', tempParent, 'box-color')
   let degreeParent = document.getElementById('tempInfoid')
-  createElement('kelvin', 'p', '', 'col-md-auto   text-center', degreeParent)
-  createElement('celcius', 'p', '', 'col-md-auto  text-center', degreeParent)
+  createElement('kelvin', 'p', '', 'col-md-auto   text-center', degreeParent, 'box-color')
+  createElement('celcius', 'p', '', 'col-md-auto  text-center', degreeParent, 'box-color')
   createElement('fahren', 'p', '', 'col-md-auto  text-center', degreeParent)
   
-  createElement('condition', 'div', '', 'container rounded h4 bg-primary justify-content-center', poppy)
+  createElement('condition', 'div', '', 'container rounded h4  justify-content-center', poppy)
   let conditionParent = document.getElementById('conditionid')
   createElement('conditionTitle', 'p', 'Condition', 'row justify-content-center', conditionParent)
   createElement('conditionInfo', 'p', '', 'row justify-content-center', conditionParent)
   
   
-  createElement('other', 'div', '', 'container rounded h4 bg-warning justify-content-center', poppy)
+  createElement('other', 'div', '', 'container rounded h4 justify-content-center', poppy)
   let otherParent = document.getElementById('otherid')
   createElement('otherTitle', 'p', 'Other Info', 'row bg-sucess text-center justify-content-center', otherParent)
   createElement('otherInfo', 'img', '', 'row bg-sucess text-center justify-content-center', otherParent)
