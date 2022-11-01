@@ -87,41 +87,41 @@ let poppy = document.getElementById('popArea')
 
 // This is an attempt to try and ease up my hard code, didn't get it perfect, wish I could have run my parameters through it
 // really liked the templete literals and parameters making it easy to "use"
-function createElement (area, element, text, clas, parent, meh) {
+function createElement (area, element, text, clas, parent) {
   let ids = `${area}id` 
   let createElement = document.createElement(element)
   parent.appendChild(createElement)
-  createElement.setAttribute('id',ids, meh)
+  createElement.setAttribute('id',ids)
   createElement.setAttribute('class', clas)
   createElement.innerText = `${text}`
 }
 
 // This is sorta hard coded, couldn't figure out the looping with multiple parameters
 function btnClick () {
-  createElement('city', 'div', '', 'container rounded h4  justify-content-center', poppy, 'box-color')
+  createElement('city', 'div', '', 'container rounded h4  justify-content-center box-color', poppy,)
   let cityParent = document.getElementById('cityid')
-  createElement('cityTitle', 'p', 'Location', 'bg-sucess text-center justify-content-center ', cityParent, 'box-color')
-  createElement('cityInfo', 'p', '', ' text-center justify-content-center', cityParent, 'box-color')
+  createElement('cityTitle', 'p', 'Location', 'text-center text-white justify-content-center ', cityParent,)
+  createElement('cityInfo', 'p', '', ' text-center text-white justify-content-center', cityParent,)
   
-  createElement('temp', 'div', '', 'container rounded justify-content-center', poppy, 'box-color')
+  createElement('temp', 'div', '', 'container rounded justify-content-center box-color', poppy,)
   let tempParent = document.getElementById('tempid')
-  createElement('tempTitle', 'p', 'Temperature', ' row h4 bg-sucess text-center justify-content-center', tempParent, 'box-color')
-  createElement('tempInfo', 'div', '', ' container row h4 justify-content-center', tempParent, 'box-color')
+  createElement('tempTitle', 'p', 'Temperature', ' row h4  text-center text-white justify-content-center', tempParent,)
+  createElement('tempInfo', 'div', '', ' container row h4 justify-content-center', tempParent,)
   let degreeParent = document.getElementById('tempInfoid')
-  createElement('kelvin', 'p', '', 'col-md-auto   text-center', degreeParent, 'box-color')
-  createElement('celcius', 'p', '', 'col-md-auto  text-center', degreeParent, 'box-color')
-  createElement('fahren', 'p', '', 'col-md-auto  text-center', degreeParent)
+  createElement('kelvin', 'p', '', 'col-md-auto   text-center text-white', degreeParent,)
+  createElement('celcius', 'p', '', 'col-md-auto  text-center text-white', degreeParent,)
+  createElement('fahren', 'p', '', 'col-md-auto  text-center text-white', degreeParent)
   
-  createElement('condition', 'div', '', 'container rounded h4  justify-content-center', poppy)
+  createElement('condition', 'div', '', 'container rounded h4  justify-content-center box-color', poppy)
   let conditionParent = document.getElementById('conditionid')
-  createElement('conditionTitle', 'p', 'Condition', 'row justify-content-center', conditionParent)
-  createElement('conditionInfo', 'p', '', 'row justify-content-center', conditionParent)
+  createElement('conditionTitle', 'p', 'Condition', 'row justify-content-center text-white', conditionParent)
+  createElement('conditionInfo', 'p', '', 'row justify-content-center text-white', conditionParent)
   
   
-  createElement('other', 'div', '', 'container rounded h4 justify-content-center', poppy)
+  createElement('other', 'div', '', 'container rounded h4 justify-content-center box-color', poppy)
   let otherParent = document.getElementById('otherid')
-  createElement('otherTitle', 'p', 'Other Info', 'row bg-sucess text-center justify-content-center', otherParent)
-  createElement('otherInfo', 'img', '', 'row bg-sucess text-center justify-content-center', otherParent)
+  createElement('otherTitle', 'p', 'Other Info', 'row bg-sucess text-center text-white justify-content-center', otherParent)
+  createElement('otherInfo', 'img', '', 'row bg-sucess text-center text-white justify-content-center', otherParent)
 }
 
 // This is to reset the weather apps pop up, tried to just remove poppy, but it broke the whole thing so instead I remove each section one by one
